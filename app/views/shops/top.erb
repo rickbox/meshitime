@@ -1,0 +1,9 @@
+
+<%= form_with url: create_path ,local: true do |f| %>
+ <p>
+ <%= f.text_field :keyword, required: true %>
+ <%= f.submit "検索" %>
+
+ </p>
+<% end %>
+

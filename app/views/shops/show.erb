@@ -1,3 +1,31 @@
-show
-<br>
-<%= @id %>
+<h2>検索結果</h2>
+
+<% require 'open-uri' %>
+<% require 'json' %>
+<% require 'active_support' %>
+<% require 'active_support/core_ext' %>
+
+
+<% uri = "https://api.gnavi.co.jp/RestSearchAPI/20171213/" %>
+<% access_key = "ccc63d521a9a655af2cb7768d29aac36" %>
+<% url = uri << "?keyid=" << access_key << "&hit_per_page=100"  << "&freeword=" << @keyword %>
+<% url = URI.encode url %>
+<% json = open(url) %>
+<% hash = Hash.from_xml json %>
+<% shops = {} %>
+
+<% if hash.has_key?("response") %>
+  <% hash["response"]["rest"].each do |shop| %>
+    <p><%= link_to shop["name"], shop["url"], target: :_blank %></p>
+    <p>営業時間:<%= shop["opentime"] %></p>
+    <p>定休日:<%= shop["holiday"] %></p>
+    <% end %>
+<% elsif hash.has_key?("gnavi") %>
+  <% if hash["gnavi"].has_key?("error") %>
+      <% if hash["gnavi"]["error"]["code"] == "600" %>
+        <p>該当する店舗の情報が存在しません</p>
+      <% end %>
+  <% end %>
+<% else  %>
+  <p>エラーが発生しました</p>
+<% end %>

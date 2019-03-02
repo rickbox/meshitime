@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root to: 'shops#search'
-  get '/:id', to: 'shops#show'
+  root to: "shops#top"
+  post "/create" => "shops#create"
+  get "/show" => "shops#show"
 end
