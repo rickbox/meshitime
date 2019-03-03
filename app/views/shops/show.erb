@@ -12,13 +12,20 @@
 <% url = URI.encode url %>
 <% json = open(url) %>
 <% hash = Hash.from_xml json %>
-<% shops = {} %>
+<% shops = [] %>
 
 <% if hash.has_key?("response") %>
   <% hash["response"]["rest"].each do |shop| %>
     <p><%= link_to shop["name"], shop["url"], target: :_blank %></p>
+    <% if !shop["image_url"]["shop_image1"].blank? %>
+      <img src= <%= shop["image_url"]["shop_image1"] %> width="20%" height="20%">
+    <% end %>
+    <% if !shop["image_url"]["shop_image2"].blank? %>
+    <img src= <%= shop["image_url"]["shop_image2"] %> width="20%" height="20%">
+    <% end %>
     <p>営業時間:<%= shop["opentime"] %></p>
     <p>定休日:<%= shop["holiday"] %></p>
+    <hr>
     <% end %>
 <% elsif hash.has_key?("gnavi") %>
   <% if hash["gnavi"].has_key?("error") %>
