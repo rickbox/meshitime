@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122819977-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-122819977-8');
+    </script>
+
     <title>めしタイム</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +25,7 @@
 
     </header>
     <div><%= yield %><div>
-    <h6>©2018 RickBox inc.
+    <h6>©2019 RickBox inc.
     <a href="https://api.gnavi.co.jp/api/scope/" target="_blank">
     <img src="https://api.gnavi.co.jp/api/img/credit/api_155_20.gif" width="155" height="20" border="0" alt="グルメ情報検索サイト　ぐるなび">
     </a>
