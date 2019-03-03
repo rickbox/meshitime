@@ -10,7 +10,15 @@
   </head>
 
   <body>
-  <h1><%= link_to "めしタイム", root_path %></h1>
-    <%= yield %>
+    <header>
+      <h3><%= link_to "めしタイム", root_path, :style=>"text-decoration:none;" %></h3>
+
+    </header>
+    <div><%= yield %><div>
+    <h6>©2018 RickBox inc.
+    <a href="https://api.gnavi.co.jp/api/scope/" target="_blank">
+    <img src="https://api.gnavi.co.jp/api/img/credit/api_155_20.gif" width="155" height="20" border="0" alt="グルメ情報検索サイト　ぐるなび">
+    </a>
+    </h6>
   </body>
 </html>
