@@ -1,3 +1,12 @@
+<nav class="navbar is-fixed-top">
+<section class="hero is-info">
+      <div class="container">
+        <h1><%= link_to "めしタイム", root_path, :style=>"text-decoration:none;", :class=>"title"%></h1>
+    </div>
+  </section>
+</nav>
+
+<div class="hero-body">
 <h1>検索結果</h1>
 <%= @error %>
 <% @shops.each do |shop| %>
@@ -12,4 +21,7 @@
   <p>定休日: <%= shop[:holiday] %></p>
   <hr>
 <% end %>
-<h3><footer><%= paginate @shops %></footer></h3>
+</div>
+<footer>
+<%= paginate @shops %><br><br>
+</footer>
