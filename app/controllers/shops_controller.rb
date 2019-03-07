@@ -16,7 +16,7 @@ class ShopsController < ApplicationController
     require 'active_support/core_ext'
 
     uri = "https://api.gnavi.co.jp/RestSearchAPI/20171213/"
-    access_key = "ccc63d521a9a655af2cb7768d29aac36"
+    access_key = ENV['ACCESS_KEY']
     url = uri << "?keyid=" << access_key << "&hit_per_page=100"  << "&freeword=" << keyword
     url = URI.encode url
     json = open(url)
@@ -45,6 +45,9 @@ class ShopsController < ApplicationController
     end
 
     @shops = Kaminari.paginate_array(shops).page(params[:page]).per(7)
+  end
+
+  def description
   end
 
 end
