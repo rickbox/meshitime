@@ -1,0 +1,7 @@
+<h1 class="title">お問い合わせ一覧</h1>
+
+<% @comments.each do |c| %>
+  <p><%= simple_format(h(c.content)) %>:<%= c.created_at %></p>
+  <hr>
+<% end %>
+

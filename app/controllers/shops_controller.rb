@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
 
   def create
     keyword = params[:keyword]
-    redirect_to "/show?keyword=#{keyword}"
+    redirect_to "/shops?keyword=#{keyword}"
   end
 
   def show
