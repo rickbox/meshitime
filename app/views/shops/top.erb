@@ -11,7 +11,7 @@
                         <div class="field ">
                             <p class="control ">
                             <%= form_with url: shops_path ,local: true do |f| %>
-                              <%= f.text_field :keyword, placeholder: "キーワードを入力", required: true, :html=>"input",:class=>"input", :type=>"text" %>
+                              <%= f.text_field :keyword, placeholder: "キーワード(駅名、店名、料理名など)を入力", required: true, :html=>"input",:class=>"input", :type=>"text" %>
                               <%= f.submit "検索", :html=>"a", :class=>"button is-primary is-info "%>
                             <% end %>
                            </p>

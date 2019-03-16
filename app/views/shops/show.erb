@@ -9,18 +9,9 @@
 <div class="hero-body">
 <h1>検索結果</h1>
 <%= @error %>
-<% @shops.each do |shop| %>
-  <h3><%= link_to shop[:name], shop[:url], target: :_blank %></h3>
-  <% if !shop[:image1].blank? %>
-  <img src= <%= shop[:image1] %> width="150" height="150" >
-  <% end %>
-  <% if !shop[:image2].blank? %>
-  <img src= <%= shop[:image2] %> width="150" height="150" >
-  <% end %>
-  <p><b>営業時間:</b> <%= shop[:opentime] %></p>
-  <p><b>定休日</b>: <%= shop[:holiday] %></p>
-  <hr>
-<% end %>
+
+<%= render :partial => "shops" %>
+
 </div>
 <footer>
 <%= paginate @shops %><br><br>

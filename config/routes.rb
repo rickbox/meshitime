@@ -9,4 +9,3 @@ Rails.application.routes.draw do
   post "/comments" => "comments#create"
   get "/comments/89610" => "comments#show"
 end
-

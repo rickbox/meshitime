@@ -68,5 +68,5 @@ group :production do
   gem "pg"
 end
 
-gem 'kaminari'
-gem 'dotenv-rails'
+gem "kaminari"
+gem "dotenv-rails"

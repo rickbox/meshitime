@@ -1,6 +1,6 @@
-
 class ShopsController < ApplicationController
-  def top; end
+  def top
+  end
 
   def create
     keyword = params[:keyword]
@@ -8,6 +8,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    begin
     keyword = params[:keyword]
 
     require 'open-uri'
@@ -44,7 +45,10 @@ class ShopsController < ApplicationController
     @error = "エラーが発生しました"
     end
 
-    @shops = Kaminari.paginate_array(shops).page(params[:page]).per(7)
+  rescue
+    @error = "エラーが発生しました"
+  end
+    @shops = Kaminari.paginate_array(shops).page(params[:page]).per(10)
   end
 
   def description
