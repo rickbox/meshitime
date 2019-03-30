@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comments = Comment.all.order(created_at: "DESC")
+    @comments = Comment.all.order(created_at: 'DESC')
   end
 
   def comment_params
