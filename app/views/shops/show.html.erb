@@ -7,12 +7,14 @@
 </nav>
 
 <div class="hero-body">
-<h1>検索結果</h1>
-<%= @error %>
-
-<%= render :partial => "shops" %>
-
+  <h1>検索結果</h1>
+  <%= @error %>
+  <div id="shops">
+    <%= render :partial => "shops" %>
+  </div>
+  <div class="container has-text-centered">
+    <%= link_to_next_page @shops, 'もっと見る', remote: true, id: 'more_link',:class=>"button is-primary is-info" %>
+  </div>
 </div>
 <footer>
-<%= paginate @shops %><br><br>
 </footer>

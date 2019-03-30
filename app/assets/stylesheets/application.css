@@ -5,3 +5,7 @@ footer {
 ::placeholder {
   font-size: 0.6em;
 }
+
+#more_link {
+  text-align: center;
+}

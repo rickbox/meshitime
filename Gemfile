@@ -70,3 +70,4 @@ end
 
 gem "kaminari"
 gem "dotenv-rails"
+gem "jquery-rails"

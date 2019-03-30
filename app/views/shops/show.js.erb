@@ -1,0 +1,4 @@
+$('#shops').append("<%= escape_javascript(render 'shops', object: @shops) %>")
+$("#more_link").replaceWith("<%= escape_javascript(
+  link_to_next_page(@shops, 'もっと見る', remote: true, id: 'more_link',:class=>"button is-primary is-info")
+) %>");

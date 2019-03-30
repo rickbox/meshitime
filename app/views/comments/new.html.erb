@@ -12,7 +12,7 @@
                             <p class="control ">
                             <%= form_with model: @comment,local: true do |f| %>
                               <%= f.text_area :content, placeholder: "意見、感想などを入力", required: true, :html=>"input",:class=>"input textarea"%>
-                              <%= f.submit "送信", :html=>"a", :class=>"button is-primary is-info "%>
+                              <%= f.submit "送信", :html=>"a", :class=>"button is-primary is-info"%>
                             <% end %>
                            </p>
                         </div>
